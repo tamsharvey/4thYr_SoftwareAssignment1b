@@ -21,7 +21,7 @@ public class Test
 //        ArrayList<Student> students = new ArrayList<Student>(List.of(s1, s2, s3));
 
         // Create students test cases
-        Student s1 = new Student("Tamsin Harvey", 22, "19731719","2000-03-18");
+        Student s1 = new Student("Tamsin Harvey", 22, "19731719", "2000-03-18");
 
         Student s2 = new Student("Flippo Ruskih", 23, "19757318", "1999-03-18");
 
@@ -66,19 +66,19 @@ public class Test
 
 
         // Create test modules
-        Module m1 = new Module("Software Engineering", "CT417");
-        Module m2 = new Module("Machine Learning", "CT4101");
-        Module m3 = new Module("Professional Skills", "CT436");
+        Module m1 = new Module("Software Engineering", "CT417", students);
+        Module m2 = new Module("Machine Learning", "CT4101", students);
+        Module m3 = new Module("Professional Skills", "CT436", students);
         ArrayList<Module> modules = new ArrayList<Module>(List.of(m1, m2, m3));
         // Create test courses
-        Course c1 = new Course("CSIT", new ArrayList<>(), new ArrayList<>(), DateTime.parse("2020-09-01"), DateTime.parse("2021-04-30"));
-        Course c2 = new Course("BIS", new ArrayList<>(), new ArrayList<>(), DateTime.parse("2020-09-01"), DateTime.parse("2021-04-30"));
-        Course c3 = new Course("ENG", new ArrayList<>(), new ArrayList<>(), DateTime.parse("2020-09-01"), DateTime.parse("2021-04-30"));
+        Course c1 = new Course("CSIT", DateTime.parse("2020-09-01"), DateTime.parse("2021-04-30"));
+        Course c2 = new Course("BIS", DateTime.parse("2020-09-01"), DateTime.parse("2021-04-30"));
+        Course c3 = new Course("ENG", DateTime.parse("2020-09-01"), DateTime.parse("2021-04-30"));
         ArrayList<Course> courses = new ArrayList<Course>(List.of(c1, c2, c3));
 
 
         // Populating courses array
-        ArrayList<Course> courses = new ArrayList<>(List.of(c1, c2, c3));
+        ArrayList<Course> courseArrayList = new ArrayList<>(List.of(c1, c2, c3));
 
         // Assigning student to a course
         s1.setCourses(new ArrayList<Course>(List.of(c1, c2)));
@@ -109,6 +109,68 @@ public class Test
         c1.setModules(new ArrayList<Module>(List.of(m1, m3)));
         c2.setModules(new ArrayList<Module>(List.of(m1, m2)));
         c3.setModules(new ArrayList<Module>(List.of(m2, m3)));
-    }
 
+
+        for (Student s : students)
+        {
+            System.out.println("Name: " + s.getStudentName());
+            System.out.println("Age: " + s.getStudentAge());
+            System.out.println("DOB: " + s.getStudentDob());
+            System.out.println("ID: " + s.getStudentId());
+            System.out.println("Username: " + s.getUserName());
+            System.out.println("Courses: ");
+
+
+            for (Course c : s.getCourses())
+            {
+                System.out.println("  " + c.getCourseName());
+            }
+            System.out.println("Modules: ");
+            for (Module m : s.getModules())
+            {
+                System.out.println("  " + m.getModName());
+            }
+            System.out.println("");
+        }
+
+        // Print out the module data, their associated courses and students
+        System.out.println("--| Module Data |--");
+        for (Module m : modules)
+        {
+            System.out.println("Name: " + m.getModName());
+            System.out.println("ID: " + m.getModID());
+            System.out.println("Courses: ");
+            for (Course c : m.getCourseAssociated())
+            {
+                System.out.println("  " + c.getCourseName());
+            }
+            System.out.println("Students: ");
+            for (Student s : m.getAssignedStudents())
+            {
+                System.out.println("  " + s.getStudentName());
+            }
+            System.out.println("");
+        }
+
+        // Print out the course data, their associated modules and students
+        System.out.println("--| Course Data |--");
+        for (Course c : courses)
+        {
+            System.out.println("Name: " + c.getCourseName());
+            System.out.println("Modules: ");
+            for (Module m : c.getModules())
+            {
+                System.out.println("\t" + m.getModName());
+            }
+            System.out.println("Students: ");
+            for (Student s : c.getStudents())
+            {
+                System.out.println("\t" + s.getStudentName());
+            }
+            System.out.println("Start date: " + c.getStartDate().toString("yyyy-MM-dd"));
+            System.out.println("End date: " + c.getEndDate().toString("yyyy-MM-dd"));
+            System.out.println("");
+        }
+
+    }
 }
