@@ -1,7 +1,9 @@
 
+import SoftwareAssignment1a.Course;
 import SoftwareAssignment1a.Module;
 // import SoftwareAssignment1a.Lecturer;
 
+import SoftwareAssignment1a.Student;
 import org.joda.time.DateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,17 +20,11 @@ public class Test
 //        ArrayList<Student> students = new ArrayList<Student>(List.of(s1, s2, s3));
 
         // Create students test cases
-        Student s1 = new Student("Tamsin Harvey", 22);
-        s1.setDob("2000-03-18");
-        s1.setId("19731719");
+        Student s1 = new Student("Tamsin Harvey", 22, "19731719","2000-03-18");
 
-        Student s2 = new Student("Flippo Ruskih", 23);
-        s2.setDob("1999-03-18");
-        s2.setId("19757318");
+        Student s2 = new Student("Flippo Ruskih", 23, "19757318", "1999-03-18");
 
-        Student s3 = new Student("Paul Hollywood", 52);
-        s3.setDob("1970-03-18");
-        s3.setId("87654321");
+        Student s3 = new Student("Paul Hollywood", 52, "87654321", "1970-03-18");
 
         // Populating students array
         ArrayList<Student> students = new ArrayList<Student>(List.of(s1, s2, s3));
@@ -89,19 +85,19 @@ public class Test
         s3.setCourses(new ArrayList<Course>(List.of(c1, c3)));
 
         // Assigning modules to students
-        s1.setMoudules(new ArrayList<Module>(List.of(m1, m2)));
-        s2.setMoudules(new ArrayList<Module>(List.of(m2, m3)));
-        s3.setMoudules(new ArrayList<Module>(List.of(m1, m3)));
+        s1.setModules(new ArrayList<Module>(List.of(m1, m2)));
+        s2.setModules(new ArrayList<Module>(List.of(m2, m3)));
+        s3.setModules(new ArrayList<Module>(List.of(m1, m3)));
 
         // Add students to modules
-        m1.setStudents(new ArrayList<Student>(List.of(s1, s3)));
-        m2.setStudents(new ArrayList<Student>(List.of(s1, s2)));
-        m3.setStudents(new ArrayList<Student>(List.of(s2, s3)));
+        m1.setAssignedStudents(new ArrayList<Student>(List.of(s1, s3)));
+        m2.setAssignedStudents(new ArrayList<Student>(List.of(s1, s2)));
+        m3.setAssignedStudents(new ArrayList<Student>(List.of(s2, s3)));
 
         // Add course to modules
-        m1.setAssociatedCourses(new ArrayList<Course>(List.of(c1, c2)));
-        m2.setAssociatedCourses(new ArrayList<Course>(List.of(c2, c3)));
-        m3.setAssociatedCourses(new ArrayList<Course>(List.of(c1, c3)));
+        m1.setCourseAssociated(new ArrayList<Course>(List.of(c1, c2)));
+        m2.setCourseAssociated(new ArrayList<Course>(List.of(c2, c3)));
+        m3.setCourseAssociated(new ArrayList<Course>(List.of(c1, c3)));
 
         // Add students to courses
         c1.setStudents(new ArrayList<Student>(List.of(s1, s3)));
