@@ -1,5 +1,4 @@
-import SoftwareAssignment1a.Course;
-import SoftwareAssignment1a.Student;
+
 import SoftwareAssignment1a.Module;
 // import SoftwareAssignment1a.Lecturer;
 
