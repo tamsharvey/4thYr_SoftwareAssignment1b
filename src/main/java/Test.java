@@ -1,5 +1,6 @@
 
 import SoftwareAssignment1a.Course;
+import SoftwareAssignment1a.Lecturer;
 import SoftwareAssignment1a.Module;
 // import SoftwareAssignment1a.Lecturer;
 
@@ -65,7 +66,7 @@ public class Test
 
 
         // Create test modules
-        Module m1 = new Module("Software Engineering", "CT417");
+        Module m1 = new Module("Software Engineering", "CT417", );
         Module m2 = new Module("Machine Learning", "CT4101");
         Module m3 = new Module("Professional Skills", "CT436");
         ArrayList<Module> modules = new ArrayList<Module>(List.of(m1, m2, m3));
