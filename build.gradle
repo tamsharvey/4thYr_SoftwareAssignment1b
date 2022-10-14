@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'maven-publish'
+    id 'war'
+}
+
+group 'org.SoftwareAssignment1b'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+allprojects{
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+dependencies {
+    //implementation 'org.codehaus.groovy:groovy-all:3.0.5'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+    implementation 'org.terasoluna.gfw:terasoluna-gfw-jodatime-dependencies:5.7.1.RELEASE'
+    implementation 'com.github.tamsharvey:4thYr_SoftwareAssignment1a:SoftwareAssignment_1a'
+}
+
+test {
+    useJUnitPlatform()
+}
