@@ -22,7 +22,6 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
     implementation 'org.terasoluna.gfw:terasoluna-gfw-jodatime-dependencies:5.7.1.RELEASE'
     implementation 'com.github.tamsharvey:4thYr_SoftwareAssignment1a:SA_1a'
-    compile('org.apache.tomcat.embed:tomcat-embed-jasper:8.0.47')
 }
 
 test {

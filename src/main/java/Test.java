@@ -14,12 +14,6 @@ public class Test
 {
     public static void main(String[] args)
     {
-//        Student s1 = new Student("Tamsin Harvey", 22, "19731719", "18-03-2000");
-//        Student s2 = new Student("Tamsin Harvey", 22, "19731719", "18-03-2000");
-//        Student s3 = new Student("Tamsin Harvey", 22, "19731719", "18-03-2000");
-//
-//        ArrayList<Student> students = new ArrayList<Student>(List.of(s1, s2, s3));
-
         // Create students test cases
         Student s1 = new Student("Tamsin Harvey", 22, "19731719", "2000-03-18");
 
