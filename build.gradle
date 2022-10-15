@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'war'
 }
 
 group 'org.SoftwareAssignment1'
@@ -17,13 +16,6 @@ allprojects{
         maven { url 'https://jitpack.io' }
     }
 }
-
-war {
-    enabled = true
-//    archiveBaseName = 'assignment1WarFile'
-//    archiveVersion =  '0.1.0'
-}
-
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
